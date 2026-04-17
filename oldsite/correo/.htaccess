@@ -1,6 +1,0 @@
-
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^correo\.lidice\.net$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.correo\.lidice\.net$
-RewriteRule ^/?$ "http\:\/\/mail\.google\.com\/a\/LIDICE\.NET\/" [R=301,L]
-
