@@ -9,7 +9,7 @@ export default {
         'lidice-gray': '#f7f7f7',
       },
       fontFamily: {
-        sans: ['InterTight', 'Noto Sans SC', 'system-ui', 'sans-serif'],
+        sans: ['Montserrat', 'Noto Sans SC', 'system-ui', 'sans-serif'],
         display: ['Blatant', 'Noto Serif SC', 'serif'],
         zh: ['Noto Sans SC', 'sans-serif'],
         'zh-display': ['Noto Serif SC', 'serif'],

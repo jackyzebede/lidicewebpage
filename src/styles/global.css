@@ -3,22 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'InterTight';
-  src: url('/fonts/InterTight-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'InterTight';
-  src: url('/fonts/InterTight-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'Blatant';
   src: url('/fonts/Blatant.woff2') format('woff2');
   font-weight: 400;
@@ -31,7 +15,7 @@ html {
 }
 
 body {
-  font-family: 'InterTight', 'Noto Sans SC', system-ui, sans-serif;
+  font-family: 'Montserrat', 'Noto Sans SC', system-ui, sans-serif;
   color: #002f55;
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
@@ -40,7 +24,7 @@ body {
 }
 
 html[lang='zh'] body {
-  font-family: 'Noto Sans SC', 'InterTight', system-ui, sans-serif;
+  font-family: 'Noto Sans SC', 'Montserrat', system-ui, sans-serif;
 }
 
 .font-display {

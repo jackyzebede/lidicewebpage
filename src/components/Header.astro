@@ -13,9 +13,14 @@ const base = localizedPath(lang, '/');
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-lidice-blue/5">
   <div class="section flex items-center justify-between py-5">
-    <a href={base} class="font-display text-2xl text-lidice-blue tracking-tight">
-      LIDICE
-      <span class="text-lidice-orange">.</span>
+    <a href={base} class="flex items-center" aria-label="Lidice Logistic">
+      <img
+        src="/images/brand/logo-positivo.png"
+        alt="Lidice Logistic"
+        class="h-9 md:h-10 w-auto"
+        width="180"
+        height="40"
+      />
     </a>
 
     <nav class="hidden lg:flex items-center gap-10 text-[13px] font-semibold tracking-wide">
