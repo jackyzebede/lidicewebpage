@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import type { Lang } from '../i18n/ui';
+import WhatsAppFab from '../components/WhatsAppFab.astro';
 
 interface Props {
   lang: Lang;
@@ -48,6 +49,7 @@ const { lang, title, description } = Astro.props;
   </head>
   <body>
     <slot />
+    <WhatsAppFab lang={lang} />
 
     <script is:inline>
       (function () {
