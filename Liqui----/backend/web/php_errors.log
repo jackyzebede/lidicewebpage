@@ -1,0 +1,3 @@
+[08-Nov-2018 17:06:14 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/vmu9xl605aw9/public_html/lidice.net/Liqui/backend/web/webphpinfo.php on line 3
+[09-Nov-2018 11:03:22 America/Panama] PHP Parse error:  syntax error, unexpected 's' (T_STRING), expecting ',' or ';' in /home/vmu9xl605aw9/public_html/lidice.net/Liqui/backend/controllers/LiquidationController.php on line 353
+[09-Nov-2018 11:39:37 America/Panama] PHP Fatal error:  Call to undefined function backend\controllers\stripslaches() in /home/vmu9xl605aw9/public_html/lidice.net/Liqui/backend/controllers/LiquidationController.php on line 358

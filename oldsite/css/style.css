@@ -1,0 +1,237 @@
+/* 
+    Document   : style
+    Created on : 17/12/2010, 10:58:49
+    Author     : Cristian Sena
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+*{
+    padding:0;
+    margin:0;
+    font-family: sans-serif;
+    outline: 0;
+}
+body  {
+    text-align:center;
+}
+
+a {
+    text-decoration: none;
+}
+a img {
+    border: 0;
+}
+
+#wrapper{
+    width: 1200px;
+    height: 784px;
+    color: #626366;
+    background-image: url(../images/background.png);
+    background-repeat: repeat-x;
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+}
+#inner_wrapper{
+    width: 990px;
+    height: 784px;
+    margin: auto;
+}
+
+#logo{
+    margin: 20px;
+    float: left;
+}
+#header{
+    position: relative;
+    overflow: hidden;
+}
+#Reloj_serv{
+    display: none;
+}
+#Reloj_LA{
+    position: absolute;
+    top: 242px;
+    left: 109px;
+}
+#Reloj_NY{
+    position: absolute;
+    top: 160px;
+    left: 439px;
+}
+#Reloj_MIAMI{
+    position: absolute;
+    top: 228px;
+    left: 379px;
+}
+#Reloj_PA{
+    position: absolute;
+    top: 283px;
+    left: 383px;
+}
+
+#menu {
+    float: right;
+    margin-top: 70px;
+}
+#menu li{
+    list-style:none;
+    display:inline;
+    margin: 10px;
+}
+#menu li a:link, #menu li a:visited{
+    color: #003768;
+}
+#menu li a:hover{
+    color: #009AC8;
+}
+#sidebar{
+    float: left;
+    width: 320px;
+    height: 380px;
+    text-align: left;
+    font-size: 12px;
+    margin-top: 20px;
+    padding-right: 25px;
+}
+#sidebar li{
+    list-style:none;
+    margin: 5px;
+}
+#sidebar li hr{
+    height: 1px;
+    border: 0 none;
+    border-top: 1px #626366 dotted;
+}
+#sidebar li a:link, #sidebar li a:visited{
+    color: #003768;
+}
+#sidebar li a:hover{
+    color: #009AC8;
+}
+
+#content{
+    padding: 0 10px;
+    text-align: left;
+    font-size: 14px;
+}
+#content h1{
+    color: #009AC8;
+    font-size: 16px;
+    margin: 20px 0;
+}
+#content span{
+    color: #003768;
+}
+#content p{
+    margin: 15px 0;
+    line-height: 1.5em;
+}
+#content h2{
+    color: #009AC8;
+    font-size: 16px;
+}
+#left{
+    float: left;
+    width: 430px;
+    height: 340px;
+}
+
+#left img {
+    float: left;
+    padding-right: 25px;
+    padding-bottom: 100px;
+}
+#cont_foto{
+    float: left;
+    width: 170px;
+    height: 200px;
+}
+#right{
+    float: left;
+    padding-left: 25px;
+    border-left: 1px #626366 dotted;
+}
+#banner {
+    height: 70px;
+    width: 990px;
+    margin: 20px 0;
+    padding: 20px 0;
+    border: 1px solid #BBBDBF;
+    background-color: #F0F0F0;
+}
+#banner h3{
+    color: #003768;
+    font-weight: bold;
+}
+#item1, #item2, #item3{
+    float: left;
+    font-size: 10px;
+    text-align: left;
+    width: 325px;
+}
+#item1 img, #item2 img, #item3 img{
+    float: left;
+    margin: 0 20px;
+}
+#item1 a:link, #item2 a:link, #item3 a:link,
+#item1 a:visited, #item2 a:visited, #item3 a:visited{
+    color: #003768;
+}
+#item1 a:hover, #item2 a:hover, #item3 a:hover{
+    color: #009AC8;
+}
+
+#item1{
+    border-right: 1px #808183 dotted;
+}
+#item2{
+    border-right: 1px #808183 dotted;
+}
+
+#footer{
+    clear: both;
+    height: 35px;
+    border-top: 1px solid #009AC8;
+}
+#nav{
+    float: left;
+    padding-top: 5px;
+}
+
+#footer p{
+    float: right;
+    font-size: 12px;
+    padding-top: 10px;
+    color: #003768;
+}
+#footer li{
+    list-style:none;
+    display:inline;
+}
+#footer li a:link, #footer li a:visited{
+    text-decoration: none;
+    color: #626366;
+    padding: 0 10px;
+    font-size: 12px;
+}
+#footer li a:hover{
+    color: #009AC8;
+}
+.current_page_item a{
+    color: #009AC8;
+    font-weight: bold;
+}
+.servicios{
+    float: left;
+    margin-right: 15px;    
+}
