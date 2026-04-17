@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'InterTight';
+  src: url('/fonts/InterTight-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'InterTight';
+  src: url('/fonts/InterTight-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blatant';
+  src: url('/fonts/Blatant.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'InterTight', 'Noto Sans SC', system-ui, sans-serif;
+  color: #002f55;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html[lang='zh'] body {
+  font-family: 'Noto Sans SC', 'InterTight', system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: 'Blatant', 'Noto Serif SC', serif;
+  letter-spacing: -0.01em;
+}
+
+html[lang='zh'] .font-display {
+  font-family: 'Noto Serif SC', 'Blatant', serif;
+  font-weight: 700;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-lidice-orange px-6 py-3 font-bold text-white uppercase tracking-wide text-sm transition-all hover:bg-[#ff8624] hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-lidice-orange/30;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-lidice-blue px-6 py-3 font-bold text-lidice-blue uppercase tracking-wide text-sm transition-all hover:bg-lidice-blue hover:text-white;
+}
+
+.section {
+  @apply px-6 md:px-10 lg:px-16 xl:px-24 max-w-[1400px] mx-auto;
+}
+
+.kicker {
+  @apply text-lidice-orange text-xs md:text-sm font-bold uppercase tracking-[0.25em];
+}
+
+.h1 {
+  @apply font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05];
+}
+
+.h2 {
+  @apply font-display text-3xl md:text-5xl leading-[1.1];
+}
+
+.h3 {
+  @apply font-display text-xl md:text-2xl leading-tight;
+}
+
+.lead {
+  @apply text-base md:text-lg text-lidice-blue/80 leading-relaxed;
+}

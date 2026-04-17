@@ -1,0 +1,54 @@
+---
+import type { Lang } from '../i18n/ui';
+import { useTranslations, localizedPath } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const base = localizedPath(lang, '/');
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-lidice-blue/5">
+  <div class="section flex items-center justify-between py-4">
+    <a href={base} class="font-display text-2xl md:text-3xl text-lidice-blue tracking-tight">
+      LIDICE
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href={`${base}#somos`} class="hover:text-lidice-orange transition-colors">{t('nav.somos')}</a>
+      <a href={`${base}#services`} class="hover:text-lidice-orange transition-colors">{t('nav.services')}</a>
+      <a href={`${base}#consolidado`} class="hover:text-lidice-orange transition-colors">{t('nav.consolidado')}</a>
+      <a href={`${base}#fletes`} class="hover:text-lidice-orange transition-colors">{t('nav.fletes')}</a>
+      <a href={`${base}#contacto`} class="hover:text-lidice-orange transition-colors">{t('nav.contacto')}</a>
+    </nav>
+
+    <div class="flex items-center gap-2 md:gap-3">
+      <div class="flex items-center gap-1 text-xs font-bold uppercase">
+        <a
+          href="/"
+          class:list={['px-2 py-1 rounded transition-colors', lang === 'es' ? 'bg-lidice-blue text-white' : 'text-lidice-blue/60 hover:text-lidice-blue']}
+          aria-label="Español"
+        >ES</a>
+        <span class="text-lidice-blue/20">·</span>
+        <a
+          href="/en/"
+          class:list={['px-2 py-1 rounded transition-colors', lang === 'en' ? 'bg-lidice-blue text-white' : 'text-lidice-blue/60 hover:text-lidice-blue']}
+          aria-label="English"
+        >EN</a>
+        <span class="text-lidice-blue/20">·</span>
+        <a
+          href="/zh/"
+          class:list={['px-2 py-1 rounded transition-colors', lang === 'zh' ? 'bg-lidice-blue text-white' : 'text-lidice-blue/60 hover:text-lidice-blue']}
+          aria-label="中文"
+        >中</a>
+      </div>
+
+      <a href={`${base}#contacto`} class="hidden md:inline-flex btn-primary !py-2 !px-4 !text-xs">
+        {t('nav.cta')}
+      </a>
+    </div>
+  </div>
+</header>

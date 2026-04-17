@@ -1,0 +1,74 @@
+---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const groups = [
+  {
+    key: 'g1',
+    icon: '🛃',
+    services: ['s1', 's2', 's3'],
+  },
+  {
+    key: 'g2',
+    icon: '📦',
+    services: ['s1', 's2', 's3'],
+  },
+  {
+    key: 'g3',
+    icon: '💰',
+    services: ['s1', 's2', 's3'],
+  },
+  {
+    key: 'g4',
+    icon: '🏭',
+    services: ['s1'],
+  },
+  {
+    key: 'g5',
+    icon: '🎯',
+    services: ['s1', 's2', 's3'],
+  },
+  {
+    key: 'g6',
+    icon: '⚙️',
+    services: ['s1', 's2'],
+  },
+];
+---
+
+<section id="services" class="py-24 md:py-32 bg-lidice-gray">
+  <div class="section">
+    <div class="max-w-2xl mb-16">
+      <p class="kicker mb-4">{t('services.kicker')}</p>
+      <h2 class="h2 text-lidice-blue mb-4">{t('services.title')}</h2>
+      <p class="lead">{t('services.sub')}</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {groups.map((g) => (
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-lidice-blue/10">
+            <span class="text-3xl" aria-hidden="true">{g.icon}</span>
+            <h3 class="font-display text-xl text-lidice-blue">{t(`services.${g.key}.title` as any)}</h3>
+          </div>
+          <ul class="space-y-5">
+            {g.services.map((s) => (
+              <li>
+                <p class="font-bold text-sm text-lidice-blue mb-1">
+                  {t(`services.${g.key}.${s}.title` as any)}
+                </p>
+                <p class="text-sm text-lidice-blue/70 leading-relaxed">
+                  {t(`services.${g.key}.${s}.body` as any)}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
