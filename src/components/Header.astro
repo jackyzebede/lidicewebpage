@@ -11,42 +11,43 @@ const t = useTranslations(lang);
 const base = localizedPath(lang, '/');
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-lidice-blue/5">
-  <div class="section flex items-center justify-between py-4">
-    <a href={base} class="font-display text-2xl md:text-3xl text-lidice-blue tracking-tight">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-lidice-blue/5">
+  <div class="section flex items-center justify-between py-5">
+    <a href={base} class="font-display text-2xl text-lidice-blue tracking-tight">
       LIDICE
+      <span class="text-lidice-orange">.</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-      <a href={`${base}#somos`} class="hover:text-lidice-orange transition-colors">{t('nav.somos')}</a>
-      <a href={`${base}#services`} class="hover:text-lidice-orange transition-colors">{t('nav.services')}</a>
-      <a href={`${base}#consolidado`} class="hover:text-lidice-orange transition-colors">{t('nav.consolidado')}</a>
-      <a href={`${base}#fletes`} class="hover:text-lidice-orange transition-colors">{t('nav.fletes')}</a>
-      <a href={`${base}#contacto`} class="hover:text-lidice-orange transition-colors">{t('nav.contacto')}</a>
+    <nav class="hidden lg:flex items-center gap-10 text-[13px] font-semibold tracking-wide">
+      <a href={`${base}#somos`} class="hover:text-lidice-orange transition-colors uppercase">{t('nav.somos')}</a>
+      <a href={`${base}#services`} class="hover:text-lidice-orange transition-colors uppercase">{t('nav.services')}</a>
+      <a href={`${base}#consolidado`} class="hover:text-lidice-orange transition-colors uppercase">{t('nav.consolidado')}</a>
+      <a href={`${base}#fletes`} class="hover:text-lidice-orange transition-colors uppercase">{t('nav.fletes')}</a>
+      <a href={`${base}#contacto`} class="hover:text-lidice-orange transition-colors uppercase">{t('nav.contacto')}</a>
     </nav>
 
-    <div class="flex items-center gap-2 md:gap-3">
-      <div class="flex items-center gap-1 text-xs font-bold uppercase">
+    <div class="flex items-center gap-4 md:gap-6">
+      <div class="flex items-center gap-3 text-[11px] font-semibold tracking-wider">
         <a
           href="/"
-          class:list={['px-2 py-1 rounded transition-colors', lang === 'es' ? 'bg-lidice-blue text-white' : 'text-lidice-blue/60 hover:text-lidice-blue']}
+          class:list={['transition-colors', lang === 'es' ? 'text-lidice-blue' : 'text-lidice-blue/30 hover:text-lidice-blue']}
           aria-label="Español"
         >ES</a>
-        <span class="text-lidice-blue/20">·</span>
+        <span class="text-lidice-blue/15">/</span>
         <a
           href="/en/"
-          class:list={['px-2 py-1 rounded transition-colors', lang === 'en' ? 'bg-lidice-blue text-white' : 'text-lidice-blue/60 hover:text-lidice-blue']}
+          class:list={['transition-colors', lang === 'en' ? 'text-lidice-blue' : 'text-lidice-blue/30 hover:text-lidice-blue']}
           aria-label="English"
         >EN</a>
-        <span class="text-lidice-blue/20">·</span>
+        <span class="text-lidice-blue/15">/</span>
         <a
           href="/zh/"
-          class:list={['px-2 py-1 rounded transition-colors', lang === 'zh' ? 'bg-lidice-blue text-white' : 'text-lidice-blue/60 hover:text-lidice-blue']}
+          class:list={['transition-colors', lang === 'zh' ? 'text-lidice-blue' : 'text-lidice-blue/30 hover:text-lidice-blue']}
           aria-label="中文"
         >中</a>
       </div>
 
-      <a href={`${base}#contacto`} class="hidden md:inline-flex btn-primary !py-2 !px-4 !text-xs">
+      <a href={`${base}#contacto`} class="hidden md:inline-flex bg-lidice-blue text-white px-5 py-2.5 text-[12px] font-semibold tracking-wide uppercase hover:bg-lidice-orange transition-colors">
         {t('nav.cta')}
       </a>
     </div>

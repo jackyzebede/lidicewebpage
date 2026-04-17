@@ -8,22 +8,45 @@ const t = useTranslations(lang);
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-lidice-blue text-white py-12">
-  <div class="section grid md:grid-cols-3 gap-8 items-start">
-    <div>
-      <p class="font-display text-3xl tracking-tight mb-2">LIDICE</p>
-      <p class="text-white/60 text-sm max-w-xs">{t('footer.tagline')}</p>
+<footer class="bg-lidice-blue text-white">
+  <div class="section py-16 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-5">
+      <p class="font-display text-3xl tracking-tight mb-4">
+        LIDICE<span class="text-lidice-orange">.</span>
+      </p>
+      <p class="text-white/60 text-sm max-w-xs leading-relaxed">
+        {t('footer.tagline')}
+      </p>
     </div>
 
-    <div class="text-sm text-white/70 space-y-1 md:text-center">
-      <p>{t('contact.office.pty.addr')}</p>
-      <p><a href="mailto:ventas@lidice.net" class="hover:text-lidice-orange">ventas@lidice.net</a></p>
-      <p><a href="https://api.whatsapp.com/send?phone=50766145557" class="hover:text-lidice-orange">+507 6614-5557</a></p>
+    <div class="md:col-span-4 text-sm space-y-3">
+      <p class="text-[10px] font-semibold tracking-[0.22em] uppercase text-lidice-orange mb-4">
+        {t('contact.title')}
+      </p>
+      <p>
+        <a href="mailto:ventas@lidice.net" class="text-white/80 hover:text-white transition-colors">
+          ventas@lidice.net
+        </a>
+      </p>
+      <p>
+        <a href="https://api.whatsapp.com/send?phone=50766145557" class="text-white/80 hover:text-white transition-colors">
+          +507 6614-5557
+        </a>
+      </p>
     </div>
 
-    <div class="text-xs text-white/40 md:text-right">
-      <p>© {year} Lidice Logistic.</p>
-      <p>{t('footer.rights')}</p>
+    <div class="md:col-span-3 text-sm space-y-3">
+      <p class="text-[10px] font-semibold tracking-[0.22em] uppercase text-lidice-orange mb-4">
+        {t('contact.offices')}
+      </p>
+      <p class="text-white/80">Miami · Colón · Panamá</p>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="section py-6 flex flex-col md:flex-row justify-between gap-4 text-[11px] text-white/40 tracking-wide">
+      <p>© {year} Lidice Logistic. {t('footer.rights')}</p>
+      <p class="tracking-[0.2em] uppercase">Est. 1983 · Panamá</p>
     </div>
   </div>
 </footer>

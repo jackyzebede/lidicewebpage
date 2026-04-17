@@ -5,30 +5,44 @@ import { useTranslations } from '../i18n/utils';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+const stats = [
+  { n: '40+', l: lang === 'es' ? 'Años de experiencia' : lang === 'en' ? 'Years of experience' : '年经验' },
+  { n: '3', l: lang === 'es' ? 'Oficinas operativas' : lang === 'en' ? 'Operating offices' : '运营办公室' },
+  { n: '24/7', l: lang === 'es' ? 'Atención al cliente' : lang === 'en' ? 'Client service' : '客户服务' },
+  { n: '100%', l: lang === 'es' ? 'Capital panameño' : lang === 'en' ? 'Panamanian capital' : '巴拿马资本' },
+];
 ---
 
 <section id="somos" class="py-24 md:py-32 bg-white">
-  <div class="section grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-    <div class="relative">
+  <div class="section grid md:grid-cols-12 gap-12 lg:gap-20 items-center">
+    <div class="md:col-span-5 relative reveal">
       <img
         src="/images/chicaSomos-desktop.webp"
         alt=""
-        class="rounded-3xl w-full aspect-[4/5] object-cover shadow-2xl"
+        class="w-full aspect-[4/5] object-cover"
         loading="lazy"
       />
-      <div class="absolute -bottom-6 -right-6 bg-lidice-orange text-white p-6 rounded-2xl max-w-[200px] shadow-xl">
-        <p class="font-display text-4xl leading-none">40+</p>
-        <p class="text-xs uppercase tracking-wider mt-1 opacity-90">
-          {lang === 'es' ? 'años de experiencia' : lang === 'en' ? 'years of experience' : '年经验'}
-        </p>
+      <div class="absolute top-6 left-6 bg-white/90 backdrop-blur px-4 py-2 border-l-2 border-lidice-orange">
+        <p class="text-[10px] font-semibold tracking-[0.25em] uppercase text-lidice-blue/60">Since 1983</p>
       </div>
     </div>
 
-    <div>
-      <p class="kicker mb-4">{t('somos.kicker')}</p>
-      <h2 class="h2 text-lidice-blue mb-6">{t('somos.title')}</h2>
-      <p class="lead mb-8">{t('somos.body')}</p>
-      <a href="#contacto" class="btn-primary">{t('somos.cta')}</a>
+    <div class="md:col-span-7">
+      <p class="kicker mb-6 reveal">{t('somos.kicker')}</p>
+      <h2 class="h2 text-lidice-blue mb-8 reveal reveal-delay-1">{t('somos.title')}</h2>
+      <p class="lead mb-10 max-w-2xl reveal reveal-delay-2">{t('somos.body')}</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10 pt-10 border-t border-lidice-blue/10 reveal reveal-delay-3">
+        {stats.map((s) => (
+          <div>
+            <p class="font-display text-4xl md:text-5xl text-lidice-orange leading-none">{s.n}</p>
+            <p class="mt-3 text-xs font-semibold tracking-[0.15em] uppercase text-lidice-blue/60">{s.l}</p>
+          </div>
+        ))}
+      </div>
+
+      <a href="#contacto" class="btn-outline reveal reveal-delay-4">{t('somos.cta')}</a>
     </div>
   </div>
 </section>
