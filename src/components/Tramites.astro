@@ -1,0 +1,39 @@
+---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="tramites" class="py-24 md:py-32 bg-white relative overflow-hidden">
+  <img
+    src="/images/mapa-desktop.webp"
+    alt=""
+    class="absolute right-0 top-1/2 -translate-y-1/2 w-[70%] h-auto object-contain opacity-[0.04] pointer-events-none"
+    loading="lazy"
+  />
+
+  <div class="section relative">
+    <div class="grid md:grid-cols-12 gap-8">
+      <div class="md:col-span-4">
+        <p class="kicker mb-6 reveal">01 / 03</p>
+        <h2 class="h2 text-lidice-blue mb-6 reveal reveal-delay-1">{t('tramites.title')}</h2>
+        <a href="#contacto" class="btn-primary reveal reveal-delay-4 mt-4">{t('tramites.cta')}</a>
+      </div>
+
+      <div class="md:col-span-7 md:col-start-6 space-y-8">
+        <div class="reveal reveal-delay-1 pl-6 border-l-2 border-lidice-orange">
+          <p class="lead">{t('tramites.p1')}</p>
+        </div>
+        <div class="reveal reveal-delay-2 pl-6 border-l-2 border-lidice-blue/20">
+          <p class="lead">{t('tramites.p2')}</p>
+        </div>
+        <div class="reveal reveal-delay-3 pl-6 border-l-2 border-lidice-blue/20">
+          <p class="lead">{t('tramites.p3')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

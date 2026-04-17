@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Somos from '../components/Somos.astro';
+import Tramites from '../components/Tramites.astro';
+import Services from '../components/Services.astro';
+import Consolidado from '../components/Consolidado.astro';
+import Fletes from '../components/Fletes.astro';
+import Contactos from '../components/Contactos.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'es' as const;
+---
+
+<Layout
+  lang={lang}
+  title="Lidice Logistic · Socio logístico en Panamá"
+  description="Con más de 40 años de experiencia en logística, trámites aduanales y consolidado Miami-Panamá. Empresa 100% panameña."
+>
+  <Header lang={lang} />
+  <main>
+    <Hero lang={lang} />
+    <Somos lang={lang} />
+    <Tramites lang={lang} />
+    <Services lang={lang} />
+    <Consolidado lang={lang} />
+    <Fletes lang={lang} />
+    <Contactos lang={lang} />
+  </main>
+  <Footer lang={lang} />
+</Layout>

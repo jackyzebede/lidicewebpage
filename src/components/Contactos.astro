@@ -1,0 +1,92 @@
+---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+import Icon from './Icon.astro';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const waNumber = '50766145557';
+const waDisplay = '+507 6614-5557';
+const email = 'ventas@lidice.net';
+
+const offices = [
+  { name: t('contact.office.miami'), addr: t('contact.office.miami.addr'), code: 'MIA' },
+  { name: t('contact.office.colon'), addr: t('contact.office.colon.addr'), code: 'CFZ' },
+  { name: t('contact.office.pty'), addr: t('contact.office.pty.addr'), code: 'PTY' },
+];
+---
+
+<section id="contacto" class="py-24 md:py-32 bg-white">
+  <div class="section">
+    <div class="grid md:grid-cols-12 gap-8 mb-16 md:mb-20">
+      <div class="md:col-span-5">
+        <p class="kicker mb-6 reveal">Contact</p>
+        <h2 class="h2 text-lidice-blue mb-4 reveal reveal-delay-1">{t('contact.title')}</h2>
+      </div>
+      <div class="md:col-span-7 md:pt-6">
+        <p class="lead max-w-xl reveal reveal-delay-2">{t('contact.sub')}</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 border-t border-l border-lidice-blue/10 mb-20">
+      <a
+        href={`https://api.whatsapp.com/send?phone=${waNumber}`}
+        target="_blank"
+        rel="noopener"
+        class="group p-8 lg:p-10 border-b border-r border-lidice-blue/10 flex items-center gap-6 hover:bg-lidice-orange hover:text-white transition-colors duration-300 reveal"
+      >
+        <div class="text-lidice-orange group-hover:text-white shrink-0">
+          <Icon name="chat" class="w-8 h-8" />
+        </div>
+        <div>
+          <p class="text-[10px] font-semibold tracking-[0.22em] uppercase text-lidice-blue/50 group-hover:text-white/70 mb-2">
+            {t('contact.wa')}
+          </p>
+          <p class="font-display text-2xl text-lidice-blue group-hover:text-white leading-tight">{waDisplay}</p>
+        </div>
+      </a>
+
+      <a
+        href={`mailto:${email}`}
+        class="group p-8 lg:p-10 border-b border-r border-lidice-blue/10 flex items-center gap-6 hover:bg-lidice-blue hover:text-white transition-colors duration-300 reveal reveal-delay-1"
+      >
+        <div class="text-lidice-orange shrink-0">
+          <Icon name="envelope" class="w-8 h-8" />
+        </div>
+        <div>
+          <p class="text-[10px] font-semibold tracking-[0.22em] uppercase text-lidice-blue/50 group-hover:text-white/70 mb-2">
+            {t('contact.email')}
+          </p>
+          <p class="font-display text-2xl text-lidice-blue group-hover:text-white leading-tight">{email}</p>
+        </div>
+      </a>
+    </div>
+
+    <div>
+      <div class="flex items-baseline gap-4 mb-10 reveal">
+        <div class="w-8 h-px bg-lidice-orange"></div>
+        <h3 class="font-display text-2xl text-lidice-blue">{t('contact.offices')}</h3>
+      </div>
+      <div class="grid md:grid-cols-3 gap-px bg-lidice-blue/10">
+        {offices.map((o, i) => (
+          <div class={`bg-white p-8 reveal reveal-delay-${i + 1}`}>
+            <div class="flex items-start gap-3 mb-4">
+              <div class="text-lidice-orange">
+                <Icon name="pin" class="w-5 h-5" />
+              </div>
+              <div>
+                <p class="text-[10px] font-semibold tracking-[0.2em] uppercase text-lidice-blue/50">{o.code}</p>
+                <p class="font-display text-lg text-lidice-blue">{o.name}</p>
+              </div>
+            </div>
+            <p class="text-sm text-lidice-blue/70 leading-relaxed pt-4 border-t border-lidice-blue/10">
+              {o.addr}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
