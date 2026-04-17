@@ -1,0 +1,32 @@
+---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="fletes" class="py-24 md:py-32 bg-lidice-gray">
+  <div class="section grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="kicker mb-4">Lidice</p>
+      <h2 class="h2 text-lidice-blue mb-6">{t('fletes.title')}</h2>
+      <p class="lead mb-8">{t('fletes.body')}</p>
+      <a href="#contacto" class="btn-primary">{t('fletes.cta')}</a>
+    </div>
+
+    <div class="relative">
+      <picture>
+        <source media="(min-width: 1024px)" srcset="/images/containerBlack-desktop.webp" />
+        <source media="(min-width: 640px)" srcset="/images/containerBlack-tab.webp" />
+        <img
+          src="/images/containerBlack-mobile.webp"
+          alt=""
+          class="rounded-3xl w-full aspect-[4/3] object-cover shadow-xl"
+          loading="lazy"
+        />
+      </picture>
+    </div>
+  </div>
+</section>

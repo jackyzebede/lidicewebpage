@@ -1,0 +1,68 @@
+---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const waNumber = '50766145557';
+const waDisplay = '+507 6614-5557';
+const email = 'ventas@lidice.net';
+---
+
+<section id="contacto" class="py-24 md:py-32 bg-white">
+  <div class="section">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <p class="kicker mb-4">Lidice</p>
+      <h2 class="h2 text-lidice-blue mb-4">{t('contact.title')}</h2>
+      <p class="lead">{t('contact.sub')}</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
+      <a
+        href={`https://api.whatsapp.com/send?phone=${waNumber}`}
+        target="_blank"
+        rel="noopener"
+        class="group bg-gradient-to-br from-lidice-orange to-[#ff7a1f] text-white rounded-3xl p-8 flex items-center gap-5 shadow-xl hover:scale-[1.02] transition-transform"
+      >
+        <div class="text-4xl" aria-hidden="true">💬</div>
+        <div>
+          <p class="text-xs uppercase tracking-wider opacity-80 mb-1">{t('contact.wa')}</p>
+          <p class="font-display text-2xl">{waDisplay}</p>
+        </div>
+      </a>
+
+      <a
+        href={`mailto:${email}`}
+        class="group bg-lidice-blue text-white rounded-3xl p-8 flex items-center gap-5 shadow-xl hover:scale-[1.02] transition-transform"
+      >
+        <div class="text-4xl" aria-hidden="true">✉️</div>
+        <div>
+          <p class="text-xs uppercase tracking-wider opacity-80 mb-1">{t('contact.email')}</p>
+          <p class="font-display text-2xl">{email}</p>
+        </div>
+      </a>
+    </div>
+
+    <div>
+      <h3 class="font-display text-2xl text-lidice-blue text-center mb-8">
+        {t('contact.offices')}
+      </h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-lidice-gray rounded-2xl p-6 border-l-4 border-lidice-orange">
+          <p class="font-bold text-lidice-blue mb-2">{t('contact.office.miami')}</p>
+          <p class="text-sm text-lidice-blue/70">{t('contact.office.miami.addr')}</p>
+        </div>
+        <div class="bg-lidice-gray rounded-2xl p-6 border-l-4 border-lidice-orange">
+          <p class="font-bold text-lidice-blue mb-2">{t('contact.office.colon')}</p>
+          <p class="text-sm text-lidice-blue/70">{t('contact.office.colon.addr')}</p>
+        </div>
+        <div class="bg-lidice-gray rounded-2xl p-6 border-l-4 border-lidice-orange">
+          <p class="font-bold text-lidice-blue mb-2">{t('contact.office.pty')}</p>
+          <p class="text-sm text-lidice-blue/70">{t('contact.office.pty.addr')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

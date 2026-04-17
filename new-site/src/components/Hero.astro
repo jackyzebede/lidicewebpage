@@ -1,0 +1,50 @@
+---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="relative min-h-screen flex items-center overflow-hidden bg-lidice-blue">
+  <picture class="absolute inset-0">
+    <source media="(min-width: 1024px)" srcset="/images/landing-desktop.webp" />
+    <source media="(min-width: 640px)" srcset="/images/landing-tab.webp" />
+    <img
+      src="/images/landing-mobile.jpg"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </picture>
+
+  <div class="absolute inset-0 bg-gradient-to-r from-lidice-blue/85 via-lidice-blue/60 to-transparent"></div>
+
+  <div class="section relative z-10 py-32 md:py-40 text-white">
+    <p class="text-lidice-orange font-bold uppercase tracking-[0.3em] text-xs md:text-sm mb-4">
+      Lidice Logistic
+    </p>
+    <h1 class="h1 max-w-4xl">
+      {t('hero.tagline')}
+      <span class="block text-lidice-orange">{t('hero.highlight')}</span>
+    </h1>
+    <p class="mt-6 max-w-xl text-lg md:text-xl text-white/80 leading-relaxed">
+      {t('hero.sub')}
+    </p>
+    <div class="mt-10 flex flex-wrap gap-4">
+      <a href="#contacto" class="btn-primary">
+        {t('hero.cta')}
+      </a>
+      <a href="#somos" class="inline-flex items-center gap-2 px-6 py-3 text-white font-medium uppercase tracking-wider text-sm hover:text-lidice-orange transition-colors">
+        {t('hero.scroll')}
+        <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 text-xs uppercase tracking-widest animate-bounce">
+    ↓
+  </div>
+</section>
